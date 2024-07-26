@@ -33,7 +33,7 @@ def update(frame):
     global xdata, ydata
     try:
         # Read data from serial port
-        data = ser.read(FFT_SIZE * 2)  # Read 64 samples (16 bits each)
+        data = ser.read(FFT_SIZE * 2)  # Read 1024 samples (16 bits each)
         if len(data) == FFT_SIZE * 2:
             # Convert data to numpy array
             samples = np.frombuffer(data, dtype=np.int16)
