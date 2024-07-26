@@ -2,8 +2,7 @@
 /*
  * As per INMP441 SENSOR Caluculations at 44,100 HZ frequency at 16 bit mono channel, sensor produce 88.2 kilobytes of data per second
  * if user want to show sampling frquency in kilo bytes, which is match sensor I2S configuration, first uncomment void i2s_task(void *param) function calculation part, and set higher serial buard rate 100,0000( above 115200) because sensor data is tranfered in serial mointor, python read data from serial mointor and also comment the serial.write () command to clearly see serial.print values not mandatory
- * if user want to calculate time domain, user need to set mean buffer at 64, because it read so many data point 44,100 sample per second, mean buffer adjsut based on experimental trails for better sensitivity, low the mean buffer value higher the sensitivity
- * if user want to calculate frequency domain at python, user set frequency buffer 1024 ( samples per second, each sample is 2bytes , because INMP441 sensor was set 16 bit in I2S configuration, higher frequency buffer, reduce load in cpu, higher frequecy buffer is better,( donot forget consider DMA (direct memory access in esp32)
+  * if user want to calculate frequency domain at python, user set frequency buffer 1024 ( samples per second, each sample is 2bytes , because INMP441 sensor was set 16 bit in I2S configuration, higher frequency buffer, reduce load in cpu, higher frequecy buffer is better,( donot forget consider DMA (direct memory access in esp32)
  * for frequency domain , user need to use Serial.write() function, for Time domain function user need to use Serial.print(mean), and comment remaining serial print function, inorder to avoid time domain serial plotter distraction
  * 
  *
