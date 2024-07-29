@@ -63,10 +63,10 @@ void setupI2SPins() {
 void i2sTask(void *param) {
     while (true) {
         size_t bytesIn = 0;
-        unsigned long readStartTime = micros();
+       // unsigned long readStartTime = micros();
         esp_err_t result = i2s_read(I2S_PORT, sampleBuffer, BUFFER_LEN * sizeof(int16_t), &bytesIn, portMAX_DELAY);
-        unsigned long readEndTime = micros();
-        unsigned long readDuration = readEndTime - readStartTime;
+       // unsigned long readEndTime = micros();
+       // unsigned long readDuration = readEndTime - readStartTime;
 
         if (result == ESP_OK) {
             int samplesRead = bytesIn / sizeof(int16_t);
